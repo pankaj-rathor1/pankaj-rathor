@@ -81,7 +81,7 @@
 
                 <div class="buttons pt-3">
                     <button class="btn btn-primary rounded">HIRE ME</button>
-                    <button class="btn btn-dark rounded view-cv">Download CV</button>
+                    <button class="btn btn-dark rounded download-cv">Download CV</button>
                 </div>      
 
                 <div class="socials mt-4">
@@ -126,7 +126,7 @@
                     <p class="subtitle">Software Developer</p>
                     <p>I am a software developer with over 3 years of experience, specializing in Magento, React, Python, Laravel, and WordPress. I have a proven track record in full-stack development, performance optimization, and comprehensive testing (performance, functional, integration, and user acceptance). A collaborative and results-driven professional.</p>
                     <p>I have successfully contributed to over 45 projects across various technologies, delivering scalable and efficient web solutions.</p>
-                    <button class="btn btn-primary rounded mt-3 view-cv">Download CV</button>
+                    <button class="btn btn-primary rounded mt-3 download-cv">Download CV</button>
                 </div>
             </div>
         </div>
@@ -514,10 +514,9 @@
     </main>
 
     <main id="cv" style="display: none;">
-        <div class="w-50 mx-auto text-center mb-2">
+        <!-- <div class="w-50 mx-auto text-center mb-2">
             <button id="downloadCV" class="btn btn-primary ti-thumb-up" style="font-size: 1rem;">Download CV</button>
-            <button id="back-to-home" class="btn btn-secondary text-right" style="font-size: 1rem;">Back</button>
-        </div>
+        </div> -->
     
         <div class="cv-container">
             <!-- Personal Information -->
@@ -902,62 +901,46 @@
     }
 
     var homeBody = document.getElementById('home');
-    var backToHomeBody = document.getElementById('back-to-home');
     var cvBody = document.getElementById('cv');
-    var viewCvButtons = document.getElementsByClassName('view-cv');
-    var downloadCvButton = document.getElementById('downloadCV'); 
+    var viewCvButtons = document.getElementsByClassName('download-cv');
 
     // Loop through all elements with the class 'view-cv' and add the event listener
     for (var i = 0; i < viewCvButtons.length; i++) {
         viewCvButtons[i].addEventListener('click', function() {
             homeBody.style.display = 'none';
             cvBody.style.display = 'block';
-            downloadCvButton.click();
 
-        // Show the 'back-to-home' button after download
-        // backToHomeBody.style.display = 'block';
+            var doc = new jspdf.jsPDF();
+            html2canvas(document.body, {
+                onrendered: function(canvas) {
+                    var imgData = canvas.toDataURL('image/png');
+                    var imgWidth = 210; // PDF width in mm (A4 size)
+                    var pageHeight = 295; // PDF page height in mm (A4 size)
+                    var imgHeight = canvas.height * imgWidth / canvas.width;
+                    var heightLeft = imgHeight;
+                    var position = 0;
+    
+                    doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+    
+                    while (heightLeft >= 0) {
+                        position = heightLeft - imgHeight;
+                        doc.addPage();
+                        doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                        heightLeft -= pageHeight;
+                    }
+    
+                    doc.save('cv.pdf');
+
+                    // Show the download button again after the PDF is saved
+                    homeBody.style.display = 'block';
+                    cvBody.style.display = 'none';
+                }
+            });
+            
         });
     }
 
-    backToHomeBody.addEventListener('click', function() {
-        homeBody.style.display = 'block';
-        cvBody.style.display = 'none';
-    });
-
-    downloadCvButton.addEventListener('click', function() {
-        var downloadButton = document.getElementById('downloadCV');
-        // Hide the download button before generating the PDF
-        downloadButton.style.display = 'none';
-        
-        var doc = new jspdf.jsPDF();
-        html2canvas(document.body, {
-            onrendered: function(canvas) {
-                var imgData = canvas.toDataURL('image/png');
-                var imgWidth = 210; // PDF width in mm (A4 size)
-                var pageHeight = 295; // PDF page height in mm (A4 size)
-                var imgHeight = canvas.height * imgWidth / canvas.width;
-                var heightLeft = imgHeight;
-                var position = 0;
-  
-                doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-                heightLeft -= pageHeight;
-  
-                while (heightLeft >= 0) {
-                    position = heightLeft - imgHeight;
-                    doc.addPage();
-                    doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-                    heightLeft -= pageHeight;
-                }
-  
-                doc.save('cv.pdf');
-
-                // Show the download button again after the PDF is saved
-                // downloadButton.style.display = 'inline-block';
-                homeBody.style.display = 'block';
-                cvBody.style.display = 'hide';
-            }
-        });
-    });
   </script>
 
 </html>
