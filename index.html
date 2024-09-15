@@ -27,8 +27,8 @@
     <!-- Bootstrap + Steller main styles -->
 	<link rel="stylesheet" href="assets/css/steller.css">
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-
+<body>
+    <main data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
     <!-- Page navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" data-spy="affix" data-offset-top="0">
         <div class="container">
@@ -44,13 +44,15 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
-                    </li>
+                    </li>  
                     <li class="nav-item">
                         <a class="nav-link" href="#service">Service</a>
-                    </li>                   
+                    </li>   
                     <li class="nav-item">
                         <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
+                    </li>       
+                    
+                    
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#testmonial">Testmonial</a>
                     </li> -->
@@ -79,7 +81,7 @@
 
                 <div class="buttons pt-3">
                     <button class="btn btn-primary rounded">HIRE ME</button>
-                    <a href="/cv.html" target="_blank" class="btn btn-dark rounded">View CV</a>
+                    <button class="btn btn-dark rounded view-cv">Download CV</button>
                 </div>      
 
                 <div class="socials mt-4">
@@ -117,14 +119,14 @@
         <div class="container mt-5">
             <div class="row text-center text-md-left">
                 <div class="col-md-3">
-                    <img src="assets/imgs/avatar.jpg" alt="" class="img-thumbnail mb-4">
+                    <img src="assets/imgs/profile.jpg" alt="" class="img-thumbnail mb-4">
                 </div>
                 <div class="pl-md-4 col-md-9">
                     <h6 class="title">Pankaj Rathor</h6>
                     <p class="subtitle">Software Developer</p>
                     <p>I am a software developer with over 3 years of experience, specializing in Magento, React, Python, Laravel, and WordPress. I have a proven track record in full-stack development, performance optimization, and comprehensive testing (performance, functional, integration, and user acceptance). A collaborative and results-driven professional.</p>
                     <p>I have successfully contributed to over 45 projects across various technologies, delivering scalable and efficient web solutions.</p>
-                    <a href="/cv.html" target="_blank" class="btn btn-primary rounded mt-3">View CV</a>
+                    <button class="btn btn-primary rounded mt-3 view-cv">Download CV</button>
                 </div>
             </div>
         </div>
@@ -509,14 +511,455 @@
         </div>
     </footer> 
     <!-- End of page footer -->
-	
-	<!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-    <!-- bootstrap 3 affix -->
-	<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-    <!-- steller js -->
-    <script src="assets/js/steller.js"></script>
+    </main>
 
+    <main id="cv" style="display: none;">
+        <div class="w-50 mx-auto text-center mb-2">
+            <button id="downloadCV" class="btn btn-primary ti-thumb-up" style="font-size: 1rem;">Download CV</button>
+            <button id="back-to-home" class="btn btn-secondary text-right" style="font-size: 1rem;">Back</button>
+        </div>
+    
+        <div class="cv-container">
+            <!-- Personal Information -->
+            <section class="header1">
+                <h1>Pankaj Rathor</h1>
+                <p>Location: Neemuch, India | Phone: +91 8827612115 | Email: pankajrathor8827@gmail.com</p>
+                <p><a href="https://www.linkedin.com/in/pankaj-rathor-765168204">LinkedIn</a> | <a href="https://github.com/pankaj-rathor1">GitHub</a></p>
+            </section>
+    
+            <!-- Profile Summary -->
+            <section class="profile">
+                <h2>Profile Summary</h2>
+                <div class="profile-description">
+                    <p>I am a software developer with over 3 years of experience, specializing in Magento, React, Python, Laravel, and WordPress. I have a proven track record in full-stack development, performance optimization, and comprehensive testing (performance, functional, integration, and user acceptance). A collaborative and results-driven professional, I have successfully contributed to over 45 projects across various technologies, delivering scalable and efficient web solutions.</p>
+                </div>
+            </section>
+    
+            <!-- Skills -->
+            <section class="skills">
+                <h2>Skills</h2>
+                <div class="skills-list">
+                    <ul>
+                        <li><strong>Back-End Development:</strong> PHP, Laravel, Magento, WordPress, CodeIgniter, Node.js</li>
+                        <li><strong>Front-End Development:</strong> JavaScript, jQuery, React</li>
+                        <li><strong>Database Management:</strong> MySQL, Database Management</li>
+                        <li><strong>Web Technologies:</strong> HTML, CSS, Bootstrap</li>
+                        <li><strong>API Development:</strong> REST, SOAP, GraphQL</li>
+                        <li><strong>Programming Languages:</strong> Java, PHP, Python</li>
+                        <li><strong>Operating Systems:</strong> Linux, Windows</li>
+                    </ul>
+                </div>
+            </section>
+    
+            <!-- Work Experience -->
+            <section class="experience">
+                <h2>Work Experience</h2>
+                <div class="job">
+                    <h3>Java Developer (Internship)</h3>
+                    <h4>Codeash Web Solution | Aug 2020 - Feb 2021 | Neemuch</h4>
+                    <ul>
+                        <li>Learn Java and OOP concept and create project using Java.</li>
+                        <li>Web Development using Java, HTML, CSS and JavaScript.</li>  
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Software Developer</h3>
+                    <h4>Evince Development Pvt. Ltd (CMMI-3) | Feb 2021 - May 2021 | Ahmedabad</h4>
+                    <ul>
+                        <li>Developed and maintained the admin panel functionality using CodeIgniter(PHP) and MySQL.Build REST APIs for a mobile Application.</li>
+                        <li>Integrating a new theme and maintained the project on time and delivered the project to its target delivery date.</li>  
+                    </ul>
+                </div>
+    
+                <div class="job">
+                    <h3>Magento Developer</h3>
+                    <h4>Evince Development Pvt. Ltd (CMMI-3) | May 2021 - Jan 2023 | Ahmedabad</h4>
+                    <ul>
+                        <li>Developed custom Magento 2 extensions and integrated third-party extensions for enhanced functionality.</li>
+                        <li>Customized Magento themes to meet specific design and functional requirements.</li>  
+                        <li>Troubleshot and resolved various development issues throughout the project lifecycle.</li>
+                        <li>Optimized site performance to improve user experience and speed.</li>
+                        <li>Customized key sections of Magento, including the checkout process, PLP (Product Listing Page), PDP (Product Detail Page), and CMS pages.</li>
+                        <li>Gained expertise in PWA and GraphQL APIs by successfully implementing PWA in Magento 2 using ScandiPWA, and documented the entire process for future reference.</li>
+                        <li>Worked with various technologies simultaneously, including Core PHP, Magento, React, and Node.js, ensuring versatility and adaptability across projects.</li>
+                    </ul>
+                </div>
+    
+                <div class="job">
+                    <h3>Magento Developer</h3>
+                    <h4>iCreative Technologies Pvt. Ltd | Feb 2023 - Apr 2023 | Ahmedabad</h4>
+                    <ul>
+                        <li>Developed custom Magento 2 extensions and integrated third-party extensions to enhance platform functionality.</li>
+                        <li>Implemented robust error logging and automated reporting systems using PHP and JavaScript for streamlined issue tracking.</li>
+                        <li>Built and maintained web applications using Symfony Framework, Shopware, and Vue.js, ensuring a seamless and efficient development process.</li>
+                    </ul>
+                </div>
+    
+                <div class="job">
+                    <h3>Software Engineer</h3>
+                    <h4>Sinelogix Technologies Pvt. Ltd | Apr 2023 - Sep 2023 | Vadodara</h4>
+                    <ul>
+                        <li>Developed custom Magento modules tailored to specific client requirements, ensuring functionality and flexibility.</li>
+                        <li>Optimized complex database queries to significantly improve overall application performance.</li>
+                    </ul>
+                </div>
+    
+                <div class="job">
+                    <h3>Software Engineer</h3>
+                    <h4>Webential Technologies Pvt. Ltd | Sep 2023 - Present | Ahmedabad</h4>
+                    <ul>
+                        <li>Maintained and enhanced multiple projects, delivering consistent performance and reliability.</li>
+                        <li>Developed custom Magento modules tailored to specific client requirements, ensuring functionality and flexibility.</li>
+                        <li>Built a real-time chat application.</li>
+                        <li>Implemented a system to gather competitor pricing data.</li>
+                        <li>Developed a Laravel-based website with a custom WordPress plugin.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Projects -->
+            <section class="projects">
+                <h2>Key Projects</h2>
+            
+                <div class="project">
+                    <h3>Laravel-WordPress Integration</h3>
+                    <p>Developed a Laravel-based website with a custom WordPress plugin. The system allows users to generate WordPress sites based on selected pages, manage them through the Laravel platform, and publish custom pages and sections, offering clients full flexibility and control over their content.</p>
+                    <p><strong>Skills Used:</strong> Laravel, WordPress, PHP, MySQL, API Integration, Plugin Development, HTML, CSS, JavaScript</p>
+                </div>
+            
+                <div class="project">
+                    <h3>Chat Application</h3>
+                    <p>Built a real-time chat application using Node.js, with AWS S3 Bucket integration for secure image storage, enhancing communication features for end-users.</p>
+                    <p><strong>Skills Used:</strong> Node.js, AWS S3, WebSocket, JavaScript, PHP, HTML, CSS</p>
+                </div>
+    
+                <div class="project">
+                    <h3>Competitor Data Retrieval</h3>
+                    <p>Implemented a system to gather competitor pricing data, enabling analysis of market trends and competitor strategies to inform pricing decisions.</p>
+                    <p><strong>Skills Used:</strong> Web Scraping, API Integration, Data Analysis, Python</p>
+                </div>
+    
+                <div class="project">
+                    <h3>PWA Implementation</h3>
+                    <p>Assisted in the integration of Progressive Web App (PWA) technology into a Magento 2 site using ScandiPWA, enhancing the website's performance, user experience, and mobile accessibility.</p>
+                    <p><strong>Skills Used:</strong> Magento 2, ScandiPWA, React, Node.js, GraphQL API, HTML, CSS</p>
+                </div>
+            
+                <div class="project">
+                    <h3>Admin Activity Logger Module</h3>
+                    <p>Developed a custom Magento 2 module that tracks and logs all admin actions (create, update, delete) for better oversight and auditing of backend operations.</p>
+                    <p><strong>Skills Used:</strong> Magento 2, MySQL, Module Development</p>
+                </div>
+            
+                <div class="project">
+                    <h3>Gift Card Integration</h3>
+                    <p>Integrated gift card functionality by leveraging Nomad Gift Card APIs, enabling seamless gift card transactions and redemptions within the platform.</p>
+                    <p><strong>Skills Used:</strong> API Integration, Magento 2, REST API</p>
+                </div>
+            </section>
+            
+            <!-- Education -->
+            <section class="education">
+                <h2>Education</h2>
+                <div class="study">
+                    <p>Master of Computer Applications- Gyanodaya Institute of Management & Technology, Neemuch</p>
+                </div>
+            </section>
+    
+            <!-- Languages (Optional) -->
+            <section class="languages">
+                <h2>Languages</h2>
+                <div class="language-list">
+                    <ul>
+                        <li>English (Conversational)</li>
+                        <li>Hindi (Fluent)</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <style>
+            /* Reset CSS */
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        } */
+    
+        .cv-container {
+            width: 100%;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* Header Section */
+        .header {
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 2px solid #007BFF;
+            margin-bottom: 30px;
+        }
+    
+        .header1{
+            margin-left: 0.5rem;
+        }
+        .header h1 {
+            font-size: 3em;
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+    
+        .header p {
+            font-size: 1.1em;
+            color: #666;
+            margin: 5px 0;
+        }
+    
+        .header a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 15px;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+            transition: color 0.3s, border-bottom 0.3s ease;
+        }
+    
+        .header a:hover,
+        .header a:focus {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+        }
+    
+        /* General Section Styles */
+        section {
+            margin-bottom: 20px;
+        }
+    
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #444;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+    
+        .profile, 
+        .experience, 
+        .education, 
+        .skills, 
+        .projects, 
+        .languages {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+    
+        .profile-description, 
+        .job, 
+        .study, 
+        .skills-list, 
+        .project, 
+        .language-list {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
+        }
+    
+        .job:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+    
+        /* Job Section */
+        .job h3 {
+            font-size: 1.5em;
+            color: #007BFF;
+            margin-bottom: 5px;
+        }
+    
+        .job h4 {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+    
+        .cv ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: #555;
+        }
+    
+        .cv ul li{
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: #555;
+        }
+    
+        .cv ul li::marker{
+            color: #007BFF;
+        }
+    
+        /* Projects Section */
+        .projects {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        .projects h2 {
+            font-size: 1.8em;
+            color: #444;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+    
+        .project {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
+        }
+    
+        .project:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+    
+        .project h3 {
+            font-size: 1.5em;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+    
+        .project p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+    
+        .project strong {
+            font-weight: 600;
+            color: #333;
+        }
+    
+        .project:hover h3 {
+            color: #0056b3;
+        }
+    
+        </style>
+    </main>
 </body>
+
+<!-- core  -->
+<script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+<script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+<!-- bootstrap 3 affix -->
+<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+<!-- steller js -->
+<script src="assets/js/steller.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+<script>
+    // Select all nav-item elements
+    var navItems = document.getElementsByClassName('nav-item');
+
+    // Loop through all nav-items and add click event listener
+    for (var i = 0; i < navItems.length; i++) {
+        
+        navItems[i].addEventListener('click', function() {
+            // Remove 'active' class from all nav-links
+            var navLinks = document.getElementsByClassName('nav-link');
+            for (var j = 0; j < navLinks.length; j++) {
+                navLinks[j].classList.remove('active');
+            }
+            
+            // Add 'active' class to the clicked nav-link (child of the nav-item)
+            this.getElementsByClassName('nav-link')[0].classList.add('active');
+        });
+    }
+
+    var homeBody = document.getElementById('home');
+    var backToHomeBody = document.getElementById('back-to-home');
+    var cvBody = document.getElementById('cv');
+    var viewCvButtons = document.getElementsByClassName('view-cv');
+    var downloadCvButton = document.getElementById('downloadCV'); 
+
+    // Loop through all elements with the class 'view-cv' and add the event listener
+    for (var i = 0; i < viewCvButtons.length; i++) {
+        viewCvButtons[i].addEventListener('click', function() {
+            homeBody.style.display = 'none';
+            cvBody.style.display = 'block';
+            downloadCvButton.click();
+
+        // Show the 'back-to-home' button after download
+        // backToHomeBody.style.display = 'block';
+        });
+    }
+
+    backToHomeBody.addEventListener('click', function() {
+        homeBody.style.display = 'block';
+        cvBody.style.display = 'none';
+    });
+
+    downloadCvButton.addEventListener('click', function() {
+        var downloadButton = document.getElementById('downloadCV');
+        // Hide the download button before generating the PDF
+        downloadButton.style.display = 'none';
+        
+        var doc = new jspdf.jsPDF();
+        html2canvas(document.body, {
+            onrendered: function(canvas) {
+                var imgData = canvas.toDataURL('image/png');
+                var imgWidth = 210; // PDF width in mm (A4 size)
+                var pageHeight = 295; // PDF page height in mm (A4 size)
+                var imgHeight = canvas.height * imgWidth / canvas.width;
+                var heightLeft = imgHeight;
+                var position = 0;
+  
+                doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+  
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    doc.addPage();
+                    doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+  
+                doc.save('cv.pdf');
+
+                // Show the download button again after the PDF is saved
+                // downloadButton.style.display = 'inline-block';
+                homeBody.style.display = 'block';
+                cvBody.style.display = 'hide';
+            }
+        });
+    });
+  </script>
+
 </html>
+
+

@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="assets/css/steller.css">
 
 </head>
-<body>
+<body id="cv">
     <button id="downloadCV" class="btn btn-primary ti-thumb-up w-100 mx-auto text-center mb-2" style="font-size: 1rem;">Download CV</button>
 
     <div class="container">
@@ -173,10 +173,7 @@
             </div>
         </section>
     </div>
-</body>
-</html>
-
-<style>
+    <style>
         /* Reset CSS */
     * {
         margin: 0;
@@ -367,41 +364,8 @@
     }
 
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+</body>
+</html>
 
-<script>
-    document.getElementById('downloadCV').addEventListener('click', function() {
-        var downloadButton = document.getElementById('downloadCV');
-        // Hide the download button before generating the PDF
-        downloadButton.style.display = 'none';
 
-        var doc = new jspdf.jsPDF();
-        html2canvas(document.body, {
-            onrendered: function(canvas) {
-                var imgData = canvas.toDataURL('image/png');
-                var imgWidth = 210; // PDF width in mm (A4 size)
-                var pageHeight = 295; // PDF page height in mm (A4 size)
-                var imgHeight = canvas.height * imgWidth / canvas.width;
-                var heightLeft = imgHeight;
-                var position = 0;
-  
-                doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-                heightLeft -= pageHeight;
-  
-                while (heightLeft >= 0) {
-                    position = heightLeft - imgHeight;
-                    doc.addPage();
-                    doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-                    heightLeft -= pageHeight;
-                }
-  
-                doc.save('cv.pdf');
-
-                // Show the download button again after the PDF is saved
-                downloadButton.style.display = 'inline-block';
-            }
-        });
-    });
-  </script>
 
